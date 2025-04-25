@@ -2,10 +2,10 @@ const mysql = require("mysql");
 const util = require("util");
 
 const conn = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "patil_hospital"
+    host: "bmwsvhdcmsjyfk47siun-mysql.services.clever-cloud.com",
+    user: "u1bd6eelwssjv5n6",
+    password: "vueps8bQBR9AcKm4Ke6B",
+    database: "bmwsvhdcmsjyfk47siun"
 });
 
 // कनेक्शन तपासण्यासाठी एरर हँडलिंग
