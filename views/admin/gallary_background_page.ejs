@@ -1,0 +1,70 @@
+<%-include("index.ejs")%>  
+
+
+<div class="container mt-5 pt-5 pb-5 mb-5 text-justify" style="background-color: rgb(223, 149, 226);">
+    <form action="/admin/gallary_background_page" method="post" enctype="multipart/form-data">
+        <div class="row">
+
+            <h1 class="text-center text-white">Gallery Background Page</h1>
+
+            <div class="col-md-6">
+                <label for="">Background Image Name</label>
+                <input type="text" name="gallary_background_image_name" class="form-control">
+            </div>
+
+            <div class="col-md-6">
+                <label for="">Background Image</label>
+                <input type="file" name="gallary_background_image" accept="image/*" class="form-control">
+                <img src="/assest/img/gallery" width="100px" alt="Preview">
+            </div>
+
+            <div class="col-md-12 text-center">
+                <button class="btn btn-lg btn-primary mt-5">Save</button>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- रिस्पॉन्सिव्ह टेबल -->
+            <div class="table-responsive">
+                <table class="table table-dark table-hover table-bordered table-striped text-center">
+                    <thead class="">
+                        <tr>
+                            <th>#</th>
+                            <th>Sr. No</th>
+                            <th>Image Name</th>
+                            <th>Background Image</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% info.map((row, i) => { %>
+                            <tr>
+                                 <td>
+                                    <a href="/admin/gallary_background_page_edit/<%- row.gallary_background_page_id%>" class="btn btn-sm btn-warning">
+                                        <i class="fas fa-edit"></i> Edit
+                                    </a>
+                                    <a href="/admin/gallary_background_page_delete/<%-row.gallary_background_page_id%>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?');">
+                                        <i class="fa-solid fa-trash"></i> Delete
+                                    </a>
+                                </td>
+                                <td><%- i + 1 %></td>
+                                <td><%- row.gallary_background_image_name %></td>
+                                <td>
+                                    <img src="/assest/img/photos/<%- row.gallary_background_image %>" width="150px" class="img-thumbnail" alt="Image">
+                                </td>
+                               
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%-include("Footer.ejs")%>

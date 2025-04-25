@@ -1,0 +1,45 @@
+<%-include("index.ejs")%>
+
+
+
+
+
+<div class="container   mt-5 pt-5 pb-5 mb-5 text-justify " style="background-color: rgb(223, 149, 226);">
+    <form action="/admin/experience_doctor_team_edtit/<%-info.experience_doctor_team_id%>" method="post" enctype="multipart/form-data">
+        <div class="row">
+
+            <h1 class="text-center" style="color: rgb(3, 31, 27);">Edite</h1>
+
+            <div class="col-md-12 ">
+                <label for="">Big Heading </label>
+                <input type="text" name="big_heding" value="<%-info.big_heding%>"   class="form-control" id="">
+            </div>
+
+            <div class="col-md-12 ">
+                <label for="">Doctor photo</label>
+                <input type="file" name="doctor_image" value="<%-info.doctor_image%>" accept="image/*"  class="form-control" id="">
+                <img src="/admin/experience_doctor_team_edtit/<%-info.doctor_image%>" alt="">
+            </div>
+
+            <div class="col-md-12 ">
+                <label for="">Doctor Title</label>
+                <input name="docter_title" value="<%-info.docter_title%>" class="form-control" value="" id="">
+                
+            </div>
+
+            <div class="col-md-12 ">
+                <label for="">Doctor Deatils</label>
+                <textarea name="doctor_details"  class="form-control" id=""><%-info.doctor_details%></textarea>
+                
+            </div>
+
+
+            <div class="col-md-12 text-center inline-block">
+                <button class="btn btn-lg btn-primary inline-block mt-5">Save</button>
+            </div>
+        
+        </div>
+    </form>
+</div>
+
+<%-include("Footer.ejs")%>

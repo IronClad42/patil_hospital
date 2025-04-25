@@ -1,0 +1,70 @@
+/* slider */
+.slider1{
+    height: 70vh !important;
+  }
+  .slider1 img{
+    height: 70vh !important;
+  }
+
+  @media (max-width: 768px) {
+      .slider {
+        height: 30vh !important;
+       
+      }
+      .slider img{
+        height: 30vh !important;
+      }
+  }
+
+  /* servicres */
+.home-services .card:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+ 
+}
+
+.home-services i{
+  color: #1B94FF;
+}
+.know-about h1{
+   color: #1B94FF;
+}
+.know-about p{
+  text-align: justify;
+  color: gray;
+}
+
+.know-about img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.our-services .card:hover{
+  transform: scale(1.05);
+  transition: transform 0.4s ease;
+}
+.our-services img{
+  border-radius: 20px;
+}
+.our-services .card-body h5{
+    color: #1B94FF;
+    font-weight: bold;
+}
+.our-services .card-body p{
+  text-align: justify;
+}
+
+.our-services h1{
+  color: #1B94FF;
+}
+
+.doctor-team h1{
+  color: #1B94FF;
+}
+.doctor-team img{
+  border-radius: 15px;
+}
+.blog-video h1{
+    color: #1B94FF;
+}

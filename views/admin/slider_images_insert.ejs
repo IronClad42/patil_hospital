@@ -1,0 +1,109 @@
+<%-include("index.ejs")%>
+
+<div class="container   mt-5 pt-5 pb-5 mb-5 text-justify " style="background-color: rgb(223, 149, 226);">
+    <form action="/admin/slider_images_insert" method="post" enctype="multipart/form-data">
+        <div class="row">
+            
+            
+                
+
+            <div class="col-md-6">
+                <label for=""> Slider Image Name 1</label>
+                <input type="text" name="slider_name_1" value="" class="form-control"  id="" >
+                
+            </div>
+            <div class="col-md-6">
+                <label for="">Slider Image 1</label>
+                <input type="file" name="slider_image_1" accept="image/*" class="form-control" id="" >
+            </div>
+
+
+
+
+            <!-- <div class="col-md-6">
+                <label for=""> Slider Image Name 2</label>
+                <input type="text" name="slider_name_2" accept="image/*"  class="form-control" id="" >
+            </div>
+
+
+
+            <div class="col-md-6">
+                <label for=""> Slider Image 2 </label>
+                <input type="file" name="slider_image_2" accept="image/*" class="form-control" id="" >
+            </div>
+
+            <div class="col-md-6">
+                <label for=""> Slider Image Name 3</label>
+                <input type="text" name="slider_name_3" accept="image/*"  class="form-control" id="" >
+            </div>
+
+
+
+            <div class="col-md-6">
+                <label for=""> Slider Image 3 </label>
+                <input type="file" name="slider_image_3" accept="image/*" class="form-control" id="" >
+            </div> -->
+            
+            
+
+            <div class="col-md-12 text-center inline-block">
+                <button class="btn btn-lg btn-primary inline-block mt-5">Save</button>
+            </div>
+        
+        </div>
+    </form>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover table-dark">
+                <thead style="white-space: nowrap;">
+                    
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Sr.NO</th>
+                    
+                    <th scope="col ">
+                        <label for=""> Action</th>
+                    <th scope="col ">
+                        <label for=""> Slider Image Name 1</th>
+                    <th scope="col ">Slider Image 1</th>
+                  
+                  </tr>
+                </thead>
+                <tbody>
+                
+                   
+
+                        <% slider_images.map((row,i)=>{ %>
+                            <tr>
+                            <td></td>
+                            
+                            <td><%= i + 1 %></td>
+                            <td>
+                                <a href="/admin/slider_images_edit/<%-row.slider_id%>"><button><i class="fa-solid fa-pen"></i>
+                                </button></a>
+                                <a href="/admin/slider_images_delete/<%-row.slider_id%>"><button><i class="fa-solid fa-trash"></i>
+
+                                </button></a>
+                            </td>
+                                <td class="text-white"><%-row.slider_name_1%></td>
+                                <td>
+                                    <img src="/assest/img/photos/<%-row.slider_image_1%>" width="100px" alt="">
+                                </td>
+                            </tr> 
+                               
+                            <% }) %>
+                        
+                  
+                    
+                    </tbody>
+                
+               
+              </table>
+        </div>
+    </div>
+</div>
+
+<%-include("Footer.ejs")%>

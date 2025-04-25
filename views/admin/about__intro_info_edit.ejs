@@ -1,0 +1,57 @@
+<%-include("index.ejs")%>
+
+<div class="container   mt-5 pt-5 pb-5 mb-5 text-justify " style="background-color: rgb(223, 149, 226);">
+    <form action="/admin/about__intro_info_edit/<%-info.about_page_id%>" method="post" enctype="multipart/form-data">
+        <div class="row">
+
+            <h1 class="text-center text-white">About Page Background Edit</h1>
+
+
+
+            <div class="col-md-6 ">
+                <label for="">Big Title </label>
+                <input type="text" name="about_big_title_name" value="<%-info.about_big_title_name%>"   class="form-control" id="">
+            </div>
+
+            <div class="col-md-6 ">
+                <label for=""> About Us Deatils </label>
+                <textarea type="text" name="about_background_image_name" class="form-control" id=""><%-info.about_background_image_name%></textarea>
+            </div>
+
+            <div class="col-md-6">
+                <label for="">About Images</label>
+                <input type="file" name="about_image" value="<%-info.about_image%>" accept="image/*"  class="form-control" id="">
+                <img src="/assest/img/photos" width="100px" alt="">
+            </div>
+
+            <div class="col-md-6 ">
+                <label for="">About Us Card Title</label>
+                <input type="text" name="about_us_card_title" value="<%-info.about_us_card_title%>" accept="image/*"  class="form-control" id="">
+            </div>
+
+            <div class="col-md-6 ">
+                <label for="">About Us card Details Details</label>
+                <input type="text" name="about_us_card_details" value="<%-info.about_us_card_details%>" accept="image/*"  class="form-control" id="">
+            </div>
+
+            <div class="col-md-6 ">
+                <label for="">About Name</label>
+                <textarea type="text" name="about_details" class="form-control" id=""><%-info.about_details%></textarea>
+            </div>
+
+
+            <div class="col-md-12">
+                <label for="">About serive</label>
+                <textarea type="text" name="about_service" class="form-control" id=""><%-info.about_service%></textarea>
+            </div>
+
+            <div class="col-md-12 text-center inline-block">
+                <button class="btn btn-lg btn-primary inline-block mt-5">Save</button>
+            </div>
+        
+        </div>
+    </form>
+</div>
+
+
+<%-include("Footer.ejs")%>

@@ -1,0 +1,92 @@
+
+  <%-include("navbar.ejs")%>
+
+  <link rel="stylesheet" href="/user_assest/about.css">
+
+    <script>
+      AOS.init({duration: 1000 });
+    </script>
+
+    <section data-aos="zoom-in">
+      <div id="navbar"></div>
+    </section>
+    <section>
+      <div class="container-fluid mb-md-5">
+       
+      
+        <div class="row">
+          <div class="col-12 p-0" data-aos="zoom-in">
+            <div class="about-img" style="background-image: url('/assest/img/photos/<%= info[0].about_background_imags %>');">
+              <h1 class="text-white text-center">About Us</h1>
+            </div>
+          </div>
+        </div>
+      
+     
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="row about-us">
+          <div class="col-md-7 my-md-5 " data-aos="zoom-in">
+            <h1 class="my-md-5 my-4">Introduction</h1>
+
+            <% about_page_intro.map((row,i)=>{ %>
+            
+            <p><%-row.about_background_image_name%></p>
+            
+            <% }) %>
+
+            
+          </div>
+          <div class="col-md-5 my-md-5" data-aos="zoom-in">
+            <img src="/assest/img/photos/<%-about_page_intro[0].about_image%>"
+              alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-md-5">
+      <div class="container" >
+        <div class="row justify-content-center home-services" >
+  
+          <% about_page_intro.map((row,i)=>{ %>
+
+            <div class="col-md-4 mt-2"  data-aos="zoom-in" >
+              <div class="card shadow border-0 h-100">
+                <div class="card-body text-center">
+                
+                  <h3 class=" py-2 card-title"><%-row.about_us_card_title%></h3>
+                  <p class="card-text text-justify"><%-row.about_us_card_details%></p>
+                </div>
+              </div>
+            </div>
+
+            
+            <% }) %>
+            
+           
+
+         
+         
+        </div>
+      </div>
+    </section>
+                
+    <section>
+      <div class="container my-4">
+        <div class="row px-md-5 our-policy">
+          <div class="col-12 " data-aos="zoom-in">
+            <h1>Our Policy</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi repudiandae odio est facere quia porro saepe
+              ut ipsa aperiam hic, totam placeat neque quaerat illum harum ullam ea deserunt fugit! </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-aos="zoom-in">
+      <div id="footer"></div>
+    </section>
+
+    <%-include("footer.ejs")%>

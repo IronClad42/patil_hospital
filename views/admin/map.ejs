@@ -1,0 +1,58 @@
+<%-include("index.ejs")%>
+
+<div class="container mt-5 pt-5 pb-5 mb-5 text-justify" style="background-color: rgb(223, 149, 226);">
+    <form action="/admin/map" method="POST" >
+        <div class="row">
+            <h1 class="text-center text-white">Map Data Entry</h1>
+
+            <div class="col-md-12">
+                <label for="map">Enter Map Data:</label>
+                <input type="text" id="map" name="map" class="form-control" required>
+            </div>
+
+            <div class="col-md-12 text-center inline-block">
+                <button class="btn btn-lg btn-primary inline-block mt-5">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="">
+                <table class="table table-hover table-dark">
+                    <thead class="text-nowrap">
+                        <tr class="">
+                            <th scope="col">#</th>
+                            <th scope="col">Sr.No</th>
+                            <th scope="col">Big Title</th>
+                            <th scope="col">About Us Details</th>
+                            <th scope="col">About Images</th>
+                            <th scope="col">About Us Card Title</th>
+                            <th scope="col">About Us Card Details</th>
+                            <th scope="col">About Name</th>
+                            <th scope="col">About Service</th>
+                        </tr>
+                    </thead>
+
+                    <% info.map((row,i)=>{ %>
+
+                        <tr>
+                           
+                           <td>
+                            <iframe src="<%-row.map%>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                           </td> 
+                            
+
+                        </tr>
+                        <% }) %>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%-include("Footer.ejs")%>
+

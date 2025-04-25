@@ -1,0 +1,75 @@
+<%-include("index.ejs")%>
+
+
+
+
+<div class="container   mt-5 pt-5 pb-5 mb-5 text-justify " style="background-color: rgb(223, 149, 226);">
+    <form action="/admin/about_background_imags" method="post" enctype="multipart/form-data">
+        <div class="row">
+
+            <h1 class="text-center text-white">About Page Background Edit</h1>
+
+            <div class="col-md-12 ">
+                <label for="">Image Name</label>
+                <input type="text" name="about_background_image_name" value="<%-info.about_background_image_name%>"   class="form-control" id="">
+            </div>
+
+            <div class="col-md-12 ">
+                <label for="">About Us Background Image Name</label>
+                <input type="file" name="about_background_imags" value="" accept="image/*"  class="form-control" id="">
+                <img src="/assest/img/photos/<%-info.about_background_imags%>" width="100px" alt="">
+            </div>
+
+            <div class="col-md-12 text-center inline-block">
+                <button class="btn btn-lg btn-primary inline-block mt-5">Save</button>
+            </div>
+        
+        </div>
+    </form>
+</div>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Table wrapper for responsiveness -->
+            <div class="table-responsive">
+                <table class="table table-hover table-dark text-nowrap display nowrap" id="myTable">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Sr.No</th>
+                            <th scope="col">Image Name</th>
+                            <th scope="col">About Us Background Image Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      
+                        <% info.map((row,i)=>{ %>
+                        
+                        
+                            <tr>
+                                <td>
+                                    
+                                  
+                                </td>
+                                <td><%-i+1%></td>
+                                <td><%-row.about_background_image_name%></td>
+                                <td>
+                                    <img src="/assest/img/photos/<%-row.about_background_imags%>" width="300px" alt="">
+                                </td>
+                            </tr>
+                            
+                            
+                        <%})%>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%-include("Footer.ejs")%>

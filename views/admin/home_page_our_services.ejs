@@ -1,0 +1,94 @@
+<%-include("index.ejs")%>
+
+<div class="container   mt-5 pt-5 pb-5 mb-5 text-justify " style="background-color: rgb(223, 149, 226);">
+    <form action="/admin/home_page_our_services" method="post" enctype="multipart/form-data">
+        <div class="row">
+
+            <div class="col-md-12 ">
+                <label for="">Our Services Upload Image </label>
+                <input type="file" name="image" accept="image/*"  class="form-control" id="">
+            </div>
+
+            <div class="col-md-12 ">
+                <label for="">Services Title</label>
+                <input name="services_title" class="form-control"  id="">
+                
+            </div>
+
+            <div class="col-md-12 ">
+                <label for="">Services Sub Title</label>
+                <textarea name="subtitle_details" class="form-control" id=""></textarea>
+                
+            </div>
+
+
+            <div class="col-md-12 text-center inline-block">
+                <button class="btn btn-lg btn-primary inline-block mt-5">Save</button>
+            </div>
+        
+        </div>
+    </form>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover table-dark">
+                <thead style="white-space: nowrap;">
+                    
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Action</th>
+                    <th scope="col ">Our Services Upload Image</th>
+                    <th scope="col ">Services Title</th>
+                    <th scope="col ">Services Sub Title</th>
+                  </tr>
+                </thead>
+                
+                
+
+                        <% info.map((row,i)=>{ %>
+                            <tbody>
+                    <tr>
+                        
+                            <td></td>
+                            <td style="white-space: nowrap;">
+                                <a href="/admin/home_page_our_services_edit/<%-row.home_page_services_id%>"><button class="bg-warning"><i class="fas fa-edit"></i></button></a>
+                                <a href="/admin/home_page_our_services_delete/<%-row.home_page_services_id%>"><button class="bg-warning"><i class="fas fa-trash"></i>
+                                </button></a>
+                            </td>
+                             <td>
+                                <img src="/assest/img/photos/<%-row.image%>" width="200px" alt="">
+                            </td>
+                            <td class="text-white"><%-row.services_title%></td> 
+                            <td class="text-white"><%-row.subtitle_details%></td>
+
+                           
+                          
+                            
+                            
+                        </tr>
+                    </tbody>
+                        <% }) %>
+                        
+                    
+                
+               
+              </table>
+        </div>
+    </div>
+</div>
+<%-include("Footer.ejs")%>
+
+
+<!-- 
+CREATE TABLE home_page_services (
+    home_page_services_id INT PRIMARY KEY AUTO_INCREMENT ,
+    image TEXT,
+    services_title VARCHAR(255),
+    subtitle_details TEXT
+); -->
+
+
+

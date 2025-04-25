@@ -1,0 +1,90 @@
+<%-include("index.ejs")%>
+
+<div class="container   mt-5 pt-5 pb-5 mb-5 text-justify " style="background-color: rgb(223, 149, 226);">
+    <form action="/admin/services_background_imag" method="post" enctype="multipart/form-data">
+        <div class="row">
+
+            <h1 class="text-center text-white">Services Page Background </h1>
+
+
+
+            <div class="col-md-6 ">
+                <label for="">Service Photo Name</label>
+                <input type="text" name="serveces_image_name" value=""   class="form-control" id="">
+            </div>
+
+           
+
+            <div class="col-md-6">
+                <label for="">Service Images</label>
+                <input type="file" name="services_image" value="" accept="image/*"  class="form-control" id="">
+                <img src="/assest/img/photos" width="100px" alt="">
+            </div>
+
+            <div class="col-md-12 text-center inline-block">
+                <button class="btn btn-lg btn-primary inline-block mt-5">Save</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Table wrapper for responsiveness -->
+            <div class="table-responsive">
+                <table class="table table-hover table-dark text-nowrap">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Sr.No</th>
+                            <th scope="col">Image Name</th>
+                            <th scope="col">About Us Background Image Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      
+                        <% info.map((row,i)=>{ %>
+                        
+                        
+                            <tr>
+                                <td>
+                                    <a href="/admin/services_background_imag_edit/<%-row.services_background_images_id%>">
+                                        <button><i class="fas fa-edit"></i></button>
+                                    </a>
+                                    <a href="/admin/services_background_imag_delete/<%-row.services_background_images_id%>">
+                                        <button><i class="fa-solid fa-trash"></i></button>
+                                    </a>
+                                  
+                                </td>
+                                <td><%-i+1%></td>
+                                <td><%-row.serveces_image_name%></td>
+                                <td>
+                                    <img src="/assest/img/photos/<%-row.services_image%>" width="300px" alt="">
+                                </td>
+                            </tr>
+                            
+                            
+                        <% }) %>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%-include("Footer.ejs")%>
+
+<!-- CREATE TABLE services_background_images (
+    services_background_images_id INT AUTO_INCREMENT PRIMARY KEY,
+    about_big_title_name VARCHAR(255) ,
+    about_image VARCHAR(255) 
+); -->
+
+<!-- CREATE TABLE services_background_images (
+    services_background_images_id INT AUTO_INCREMENT PRIMARY KEY,
+    about_big_title_name VARCHAR(255) ,
+    about_image TEXT 
+); -->

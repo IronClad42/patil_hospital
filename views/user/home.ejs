@@ -1,0 +1,193 @@
+<%-include("navbar.ejs")%>
+
+
+
+  <!--------------------------------AOS----------------------------------->
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+</head>
+
+<body>
+  
+  <!-------------------------AOS---------------------------->
+
+  <script>
+
+    AOS.init();
+  </script>
+
+  <section>
+    <div id="navbar"></div>
+  </section>
+
+  
+  <section>
+  
+
+    <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-ride="carousel" data-interval="1000" data-bs-touch="false">
+      <div class="carousel-inner slide slider1">
+       <% slider.map((row,i)=>{ %>
+      
+        <div class="carousel-item   <%= i === 0 ? 'active' : '' %> h-0">
+          <img src="/assest/img/photos/<%- row.slider_image_1 %>" class="d-block w-100 h-75 " alt="...">
+        </div>
+      
+      <% }) %>
+     
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+
+  <section class="py-md-5">
+    <div class="container mt-5" >
+      <div class="row justify-content-center home-services" >
+
+        <div class="col-md-4 mt-2"  data-aos="zoom-in" >
+          <div class="card shadow border-0 h-100">
+            <div class="card-body text-center">
+              
+              <img src="/assest/img/photos/<%-home_page_section.icon_image_1%>" class="w-100" alt="">
+              
+              <h5 class="card-title  mt-3">Modern Hospital</h5>
+              <p class="card-text"><%-home_page_section.icon_name_1%></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mt-2"  data-aos="zoom-in">
+          <div class="card shadow border-0 h-100">
+            <div class="card-body text-center">
+              <img src="/assest/img/photos/<%-home_page_section.icon_image_2%>" class="w-100" alt="">
+              
+              <h5 class="card-title  mt-3">Expert Doctors</h5>
+              <p class="card-text"><%-home_page_section.icon_name_2%></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mt-2"  data-aos="zoom-in">
+          <div class="card shadow border-0 h-100">
+            <div class="card-body text-center">
+              <img src="/assest/img/photos/<%-home_page_section.icon_image_3%>" class="w-100" alt="">
+
+              <h5 class="card-title  mt-3">Emergency Services</h5>
+              <p class="card-text"><%-home_page_section.icon_name_3%></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container pb-md-5">
+      <div class="row know-about">
+        <div class="col-12">
+          <h1 class="text-center pb-md-5 pt-5">Gynecologists Hospital in Ahmednagar</h1>
+        </div>
+        <div class="col-md-6 py-3 shadow" data-aos="zoom-in">
+          <div class="p-2 h-100 shadow">
+            <img src="/assest/img/photos/<%-home_page_section_4.image%>" class="w-100" alt="">
+          </div>
+        </div>
+        <div class="col-md-6 " data-aos="zoom-in">
+         <div class="p-md-5 p-2 shadow h-100">
+          <h1 class="text-center">Know About</h1>
+          <h2 class="text-center">Patil Hospital and DentalClinic</h2>
+          <p class="text-justify"><%-home_page_section_4.subtitle%></p>
+         </div>
+        </div>       
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container ">
+      <div class="row our-services px-0 mx-0 px-md-5 mx-md-5 pb-5">
+        <div class="col-12 ">
+          <h1 class="text-center pt-4">Our Services</h1>
+        </div>
+
+        <% home_page_services.map((row,i)=>{ %>
+        
+          <div class="col-md-4  mt-4 ml-1" data-aos="flip-left" data-aos="flip-right" >
+            <div class="card shadow border-0 rounded-3 " >
+              <img src="/assest/img/photos/<%-row.image%>" class="w-100" alt="">
+              <div class="card-body ">
+                <h5 class="card-title text-center"></h5>
+                <p class="card-text"><%-row.subtitle_details%></p>
+              </div>
+            </div>
+          </div>
+        
+        <% }) %>
+       
+        
+        
+        
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row doctor-team px-0 mx-0 px-md-5 mx-md-5">
+        <div class="col-12 ">
+          <h1 class="text-center">Experienced Doctor Team</h1>
+        </div>
+
+       <% experience_doctor_team.map((row,i)=>{ %>
+        
+        <div class="col-md-4  mt-4" data-aos="flip-right">
+          <div class="card shadow border-0 rounded-3 " >
+            <img src="/assest/img/photos/<%-row.doctor_image%>" class="card-img-top p-2 border-1" alt="...">
+            <div class="card-body ">
+              <h5 class="card-title text-center">Dentists</h5>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+       
+        
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row blog-video">
+        <div class="col-12">
+          <h1 class="text-center pt-5">Blogs</h1>
+        </div>
+        <div class="col-md-4">
+          <iframe src="https://www.youtube.com/embed/bKA24zej9fU" class="w-100 mt-3" frameborder="0"></iframe>
+        </div>
+        <div class="col-md-4">
+          <iframe src="https://www.youtube.com/embed/bKA24zej9fU" class="w-100 mt-3" frameborder="0"></iframe>
+        </div>
+        <div class="col-md-4">
+          <iframe src="https://www.youtube.com/embed/bKA24zej9fU" class="w-100 mt-3" frameborder="0"></iframe>
+        </div>
+        <div class="col-md-4">
+          <iframe src="https://www.youtube.com/embed/bKA24zej9fU" class="w-100 mt-3" frameborder="0"></iframe>
+        </div>
+        <div class="col-md-4">
+          <iframe src="https://www.youtube.com/embed/bKA24zej9fU" class="w-100 mt-3" frameborder="0"></iframe>
+        </div>
+        <div class="col-md-4">
+          <iframe src="https://www.youtube.com/embed/bKA24zej9fU" class="w-100 mt-3" frameborder="0"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<%-include("footer.ejs")%>

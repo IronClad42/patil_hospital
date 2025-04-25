@@ -1,0 +1,32 @@
+<%-include("index.ejs")%>
+
+<div class="container   mt-5 pt-5 pb-5 mb-5 text-justify " style="background-color: rgb(223, 149, 226);">
+    <form action="/admin/services_background_imag_edit/<%-info.services_background_images_id%>" method="post" enctype="multipart/form-data">
+        <div class="row">
+
+            <h1 class="text-center text-white">Services Page Background Edit</h1>
+
+
+
+            <div class="col-md-6 ">
+                <label for="">Service Photo Name</label>
+                <input type="text" name="serveces_image_name" value="<%-info.serveces_image_name%>"   class="form-control" id="">
+            </div>
+
+           
+
+            <div class="col-md-6">
+                <label for="">Service Images</label>
+                <input type="file" name="services_image" value="" accept="image/*"  class="form-control" id="">
+                <img src="/assest/img/photos/<%-info.services_image%>" width="100px" alt="">
+            </div>
+
+            <div class="col-md-12 text-center inline-block">
+                <button class="btn btn-lg btn-primary inline-block mt-5">Save</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<%-include("Footer.ejs")%>

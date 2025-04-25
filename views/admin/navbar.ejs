@@ -1,0 +1,233 @@
+<%-include("index.ejs")%>
+
+
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Responsive Table -->
+            <div class="table-responsive">
+                <table class="table table-hover table-dark text-nowrap display nowrap" id="myTable">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Appointment Date</th>
+                            <th scope="col">Patient Name</th>
+                            <th scope="col">Mobile Number</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% appointments.map((row, i) => { %>
+                        <tr>
+                            <td><%- i + 1 %></td>
+                            <td><%- row.appointment_date %></td>
+                            <td><%- row.patient_name %></td>
+                            <td><%- row.patient_mobile %></td>
+                            <td><%- row.patient_age %></td>
+                            <td><%- row.patient_address %></td>
+                            <td>
+                               
+                                <a href="/admin/appointment_delete/<%- row.appointments_id %>" onclick="return confirm('Are you sure you want to delete this appointment?');">
+                                    <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                                </a>
+                            </td>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container   mt-5 pt-5 pb-5 mb-5 text-justify" style="background-color: rgb(223, 149, 226);">
+    <form action="/admin/navbar" method="post" enctype="multipart/form-data" >
+    <div class="row">
+        
+        
+            <div class="col-md-6">
+            <label for="">Enter Image Logo</label>
+            <input type="file" name="image_logo" accept="image/*" class="form-control" id="" >
+            
+        </div>
+
+        <div class="col-md-6">
+            <label for="">Enter Image Name</label>
+            <input type="text" name="image_name" value="<%-info.image_name%>" class="form-control" id="" >
+            
+        </div>
+        <div class="col-md-6">
+            <label for="">Enter Facebook Url</label>
+            <input type="text" name="facebook_icon_url" value="<%-info.facebook_icon_url%>" class="form-control" id="" >
+        </div>
+        <div class="col-md-6">
+            <label for="">Enter Instagram Url</label>
+            <input type="hidden" name="instagram_icon_url1"  value="" >
+            <input type="text" name="instagram_icon_url" value="<%-info.instagram_icon_url%>" class="form-control" id="" >
+        </div>
+        <div class="col-md-6">
+            <label for="">Enter Twitter Url</label>
+            <input type="text" name="twitter_icon_url" value="<%-info.twitter_icon_url%>" class="form-control" id="" >
+        </div>
+        <div class="col-md-6">
+            <label for="">Enter Youtube Url</label>
+            <input type="text" name="youtube_icon_url" value="<%-info.youtube_icon_url%>" class="form-control" id="" >
+        </div>
+        <div class="col-md-12">
+            <label for="">Enter  Doctor Approment Day</label>
+            <input type="text" name="appromentday" value="<%-info.instagram_icon_url%>" class="form-control" id="" >
+        </div>
+
+        <div class="col-md-12 text-center inline-block">
+            <button class="btn btn-lg btn-primary inline-block mt-5">Save</button>
+        </div>
+      
+    </div>
+</form>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-hover table-dark">
+                    <thead class="text-nowrap">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Image Name</th>
+                            <th scope="col">Image Logo</th>
+                            <th scope="col">Facebook</th>
+                            <th scope="col">Instagram</th>
+                            <th scope="col">Twitter</th>
+                            <th scope="col">YouTube</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% [info].forEach((row, i) => { %>
+                            <tr>
+                                <th scope="row"><%= i + 1 %></th>
+                                <td><%= row.image_name %></td>
+                                <td>
+                                    <img src="/assest/img/photos/<%= row.image_logo %>" 
+                                         alt="<%= row.image_logo %>" 
+                                         class="img-fluid" width="100">
+                                </td>
+                                <td class="text-truncate" style="max-width: 150px;">
+                                    <a href="<%= row.facebook_icon_url %>" target="_blank" class="text-white">
+                                        <%= row.facebook_icon_url %>
+                                    </a>
+                                </td>
+                                <td class="text-truncate" style="max-width: 150px;">
+                                    <a href="<%= row.instagram_icon_url %>" target="_blank" class="text-white">
+                                        <%= row.instagram_icon_url %>
+                                    </a>
+                                </td>
+                                <td class="text-truncate" style="max-width: 150px;">
+                                    <a href="<%= row.twitter_icon_url %>" target="_blank" class="text-white">
+                                        <%= row.twitter_icon_url %>
+                                    </a>
+                                </td>
+                                <td class="text-truncate" style="max-width: 150px;">
+                                    <a href="<%= row.youtube_icon_url %>" target="_blank" class="text-white">
+                                        <%= row.youtube_icon_url %>
+                                    </a>
+                                </td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    /* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Table Styles */
+.table-responsive {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+    border-collapse: collapse;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.table thead {
+    background: linear-gradient(to right, #0062E6, #33AEFF);
+    color: white;
+    text-transform: uppercase;
+}
+
+.table tbody tr:hover {
+    background: rgba(0, 98, 230, 0.1);
+    transform: scale(1.01);
+    transition: 0.3s;
+}
+
+.table td, .table th {
+    padding: 12px;
+    text-align: center;
+}
+
+/* Button Styles */
+.btn {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-danger {
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    border: none;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    border: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+</style>
+
+
+
+
+<%-include("Footer.ejs")%>
+
+<!-- CREATE TABLE navbar (
+    navbar_id INT AUTO_INCREMENT PRIMARY KEY,
+    image_logo VARCHAR(255) ,
+    image_name VARCHAR(255) ,
+    facebook_icon_url TEXT,
+    instagram_icon_url TEXT,
+    twitter_icon_url TEXT,
+    youtube_icon_url TEXT,
+    approment_day VARCHAR(100)
+); -->

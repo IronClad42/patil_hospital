@@ -1,0 +1,115 @@
+<%-include("index.ejs")%>
+
+<div class="container   mt-5 pt-5 pb-5 mb-5 text-justify " style="background-color: rgb(223, 149, 226);">
+    <form action="/admin/home_page_section" method="post" enctype="multipart/form-data">
+        <div class="row">
+            
+            
+                
+            <div class="col-md-6 ">
+                <label for="">Icon Image 1</label>
+                <input type="file" name="icon_image_1" accept="image/*" class="form-control" id="" >
+            </div>
+
+
+            <div class="col-md-6 ">
+                <label for="">Icon Image Name 1</label>
+                <textarea name="icon_name_1" class="form-control" id=""><%-info[0].icon_name_1%></textarea>
+                
+            </div>
+
+            <div class="col-md-6">
+                <label for="">Icon Image 2</label>
+                <input type="file" name="icon_image_2" accept="image/*" class="form-control" id="" >
+            </div>
+
+
+            <div class="col-md-6 ">
+                <label for=""> Icon Image Name 2</label>
+                <textarea type="text" name="icon_name_2"class="form-control"><%-info[0].icon_name_2%></textarea>
+                
+            </div>
+
+            <div class="col-md-6 ">
+                <label for="">Icon Image 3</label>
+                <input type="file" name="icon_image_3" accept="image/*" class="form-control" id="" >
+            </div>
+
+
+            <div class="col-md-6 ">
+                <label for=""> Icon Image Name 3</label>
+                <textarea type="text" name="icon_name_3"class="form-control"  id=""><%-info[0].icon_name_3%></textarea>
+                
+            </div>
+
+            <div class="col-md-12 text-center inline-block">
+                <button class="btn btn-lg btn-primary inline-block mt-5">Save</button>
+            </div>
+        
+        </div>
+    </form>
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover table-dark">
+                <thead style="white-space: nowrap;">
+                    
+                  <tr>
+                    <th scope="col">#</th>
+                    
+                    <th scope="col ">Icon Image 1</th>
+                    <th scope="col ">Icon Image Name 1</th>
+                    <th scope="col ">Icon Image 2</th>
+                    <th scope="col ">Icon Image Name 2</th>
+                    <th scope="col ">Icon Image 3</th>
+                    <th scope="col ">Icon Image Name 3</th>
+                  </tr>
+                </thead>
+                <tbody>
+                
+                    <tr>
+
+                        <% info.map((row,i)=>{ %>
+                        <td></td>
+                            <td class="text-white"><%-row.icon_name_1%></td>
+                            <td>
+                                <img src="/assest/img/photos/<%-row.icon_image_1%>" width="200px" alt="">
+                            </td>
+                            <td class="text-white"><%-row.icon_name_2%></td>
+                            <td>
+                                <img src="/assest/img/photos/<%-row.icon_image_2%>" width="200px" alt="">
+                            </td>
+                            <td class="text-white"><%-row.icon_name_3%></td>
+                            <td>
+                                <img src="/assest/img/photos/<%-row.icon_image_3%>" width="200px" alt="">
+                            </td>
+                           
+                        <% }) %>
+                        
+                    </tr>
+                    
+                    </tbody>
+                
+               
+              </table>
+        </div>
+    </div>
+</div>
+
+
+<%-include("Footer.ejs")%>
+
+
+<!-- CREATE TABLE home_page_section (
+    home_page_section INT AUTO_INCREMENT PRIMARY KEY,
+    icon_image_1 TEXT,
+    icon_name_1 VARCHAR(255),
+    icon_image_2 TEXT,
+    icon_name_2 VARCHAR(255),
+    icon_image_3 TEXT,
+    icon_name_3 VARCHAR(255)
+); -->

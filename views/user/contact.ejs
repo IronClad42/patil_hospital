@@ -1,0 +1,103 @@
+<%-include("navbar.ejs")%>
+<!-- <link rel="stylesheet" href="/assets/css/contact.css"> -->
+<link rel="stylesheet" href="/user_assest/contact.css">
+
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body>
+    <script>
+        AOS.init({duration: 1000 });
+      </script>
+    
+
+    <section >
+        <div id="navbar"></div>
+    </section>
+
+
+    <section>
+        <div class="container-fluid mb-md-5">
+          <div class="row">
+            <div class="col-12 p-0" data-aos="zoom-in">
+              <div class="contact-img d-flex justify-content-center align-items-center" style="background-image: url('https://strapiprod.knowlarity.com/uploads/contact_us_5a6756504e.jpg');">
+                <h1>Contact Us</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6   our-address " data-aos="zoom-in">
+                    <h1 class="text-center py-2">Contact Us</h1>
+                    <div class="row mt-5 pt-5">
+                        <div class="col-md-6 text-xl-left">
+                            <p class=" p-0 text-xl-left"><i class=" fa-solid fa-location-dot incon font-weight-bold"></i><%-contact.contact_phone%></p>
+                            <p class=" p-0 text-xl-left"><i class=" fa-solid fa-envelope incon font-weight-bold"></i> <%-contact.contact_email%></p>
+                            <p class=" p-0 text-xl-left"><i class=" fa-solid fa-phone incon font-weight-bold"></i> <%-contact.contact_address%></p>
+                            <!-- <p class=" p-0 text-xl-left"><i class=" fa-solid fa-earth-americas incon font-weight-bold"></i>  http://www.Patilhospital.in/</p> -->
+                            
+                        </div>
+                        <div class="col-md-6">
+                            <img src="/assest/img/photos/<%-contact.contact_image%>" alt="" class="img-fluid">
+                        </div>
+                    </div>
+        
+                  
+                   
+                </div>
+                <div class="col-md-6 " data-aos="zoom-in">
+                    <form action="/contact_us" method="post" class="shadow p-5">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name:</label>
+                            <input type="text" class="form-control" name="user_name" id="name" placeholder="Enter name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Mobile number:</label>
+                            <input type="text" class="form-control" name="mobile_number" id="name" placeholder="Enter name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Email:</label>
+                            <input type="text" class="form-control" name="user_email" id="name" placeholder="Enter name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Address:</label>
+                            <textarea type="text" class="form-control" name="user_address" id="name" placeholder="Enter name"></textarea>
+                        </div>
+                        <!-- <div class="mb-3">
+                            <label for="name" class="form-label">Contact:</label>
+                            <textarea class="form-control" placeholder="Messege" id="floatingTextarea" rows="5"></textarea>
+                        </div> -->
+                        <div class="mb-3 text-center">
+                            <button  class="btn btn-primary">Send Messege</button>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section data-aos="zoom-in" class="mt-5 pt-5 pb-0 mb-0">
+        <iframe src="<%-contact.map%>" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+
+    <section data-aos="zoom-in">
+        <div id="footer"></div>
+    </section>
+
+    <%-include("footer.ejs")%>
+    
+
+    <!-- CREATE TABLE contact_us (
+    contact_us_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_name VARCHAR(100) ,
+    mobile_number VARCHAR(15) ,
+    user_email VARCHAR(100) ,
+    user_address TEXT 
+); -->

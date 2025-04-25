@@ -1,0 +1,48 @@
+<%-include("index.ejs")%>
+<div class="container   mt-5 pt-5 pb-5 mb-5 text-justify " style="background-color: rgb(223, 149, 226);">
+        <form action="/admin/slider_images_edit/<%-slider_images.slider_id%>" method="post" enctype="multipart/form-data">
+            <div class="row">
+                
+                <h1 class="text-center text-white mb-4 pb-4">Edit Slider Images</h1>
+                <div class="col-md-6">
+                    <label for=""> Slider Image Name 1</label>
+                    <input type="text" name="slider_name_1" value="<%-slider_images.slider_name_1%>" class="form-control"  id="" >
+                    
+                </div>
+
+                <div class="col-md-6">
+                    <label for="">Slider Image 1</label>
+                    <input type="file" name="slider_image_1" accept="image/*" class="form-control" id="" >
+                    <img src="/assest/img/photos/<%-slider_images.slider_image_1%>" class="mt-1 pt-4" width="100px" alt="">
+                </div>
+
+                
+
+
+                
+                
+
+                <div class="col-md-12 text-center inline-block">
+                    <button class="btn btn-lg btn-primary inline-block mt-5">Save</button>
+                </div>
+            
+            </div>
+        </form>
+</div>
+
+
+
+<%-include("Footer.ejs")%>
+
+
+
+
+<!-- CREATE TABLE slider_images (
+    slider_id INT AUTO_INCREMENT PRIMARY KEY,
+    slider_name_1 VARCHAR(255),
+    slider_image_1 TEXT,
+    slider_name_2 VARCHAR(255),
+    slider_image_2 TEXT,
+    slider_name_3 VARCHAR(255),
+    slider_image_3 TEXT
+); -->

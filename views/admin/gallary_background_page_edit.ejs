@@ -1,0 +1,30 @@
+<%-include("index.ejs")%>
+
+<div class="container mt-5 pt-5 pb-5 mb-5 text-justify" style="background-color: rgb(223, 149, 226);">
+    <form action="/admin/gallary_background_page" method="post" enctype="multipart/form-data">
+        <div class="row">
+
+            <h1 class="text-center text-white">Gallery Background Page Edite</h1>
+
+            <br><br><br><br>
+            <div class="col-md-6">
+                <label for="">Background Image Name</label>
+                <input type="text" name="gallary_background_image_name" value="<%-info.gallary_background_image_name%>" class="form-control">
+            </div>
+
+            <div class="col-md-6">
+                <label for="">Background Image</label>
+                <input type="file" name="gallary_background_image" accept="image/*" class="form-control">
+                <img src="/assest/img/photos/<%-info.gallary_background_image%>" width="100px" alt="Preview">
+            </div>
+
+            <div class="col-md-12 text-center">
+                <button class="btn btn-lg btn-primary mt-5">Save</button>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+
+<%-include("Footer.ejs")%>  

@@ -1,0 +1,92 @@
+<%-include("index.ejs")%>
+
+<div class="container   mt-5 pt-5 pb-5 mb-5 text-justify " style="background-color: rgb(223, 149, 226);">
+    <form action="/admin/experience_doctor_team" method="post" enctype="multipart/form-data">
+        <div class="row">
+
+            <h1 class="mb-4 pb-4 text-center text-white" >Experian Doctor Team </h1>
+
+            <div class="col-md-12 ">
+                <label for="">Big Heading </label>
+                <input type="text" name="big_heding"   class="form-control" id="">
+            </div>
+
+            <div class="col-md-12 ">
+                <label for="">Doctor photo</label>
+                <input type="file" name="doctor_image" accept="image/*"  class="form-control" id="">
+            </div>
+
+            <div class="col-md-12 ">
+                <label for="">Doctor Title</label>
+                <input name="docter_title" class="form-control" value="" id="">
+                
+            </div>
+
+            <div class="col-md-12 ">
+                <label for="">Doctor Deatils</label>
+                <textarea name="doctor_details" class="form-control" id=""></textarea>
+                
+            </div>
+
+
+            <div class="col-md-12 text-center inline-block">
+                <button class="btn btn-lg btn-primary inline-block mt-5">Save</button>
+            </div>
+        
+        </div>
+    </form>
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Table wrapper for responsiveness -->
+            <div class="table-responsive">
+                <table class="table table-hover table-dark text-nowrap">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Sr.No</th>
+                            <th scope="col">Big Heading</th>
+                            <th scope="col">Doctor Photo</th>
+                            <th scope="col">Doctor Title</th>
+                            <th scope="col">Doctor Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% info.map((row, i) => { %>
+                            <tr>
+                                <td>
+                                    <a href="/admin/experience_doctor_team_edtit/<%-row.experience_doctor_team_id%>" class="btn btn-sm btn-primary"><button><i class="fas fa-edit"></i> </button></a>
+                                    <a href="/admin/experience_doctor_team_delete/<%-row.experience_doctor_team_id%>" class="btn btn-sm btn-primary"><button><i class="fa-solid fa-trash"></i></button></a>
+                                </td>
+                                <td><%= i + 1 %></td>
+                                <td class="text-white"><%- row.big_heding %></td>
+                                <td>
+                                    <img src="/assest/img/photos/<%- row.doctor_image %>" class="img-fluid rounded" style="max-width: 150px;" alt="Doctor Image">
+                                </td>
+                                <td class="text-white"><%- row.docter_title %></td>
+                                <td class="text-white" style="white-space: no;"><%- row.doctor_details %></td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%-include("Footer.ejs")%>
+
+
+<!-- CREATE TABLE experience_doctor_team(experience_doctor_team_id INT PRIMARY KEY AUTO_INCREMENT,
+
+big_heding VARCHAR(255),
+image TEXT,
+docter_title VARCHAR(255),
+doctor_details TEXT
+
+) -->

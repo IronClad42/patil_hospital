@@ -1,0 +1,117 @@
+<%-include("index.ejs")%>
+
+
+<div class="container   mt-5 pt-5 pb-5 mb-5 text-justify" style="background-color: rgb(223, 149, 226);">
+    <form action="/admin/home_page_icon_deatils" method="post" enctype="multipart/form-data">
+    <div class="row">
+        
+        
+            <div class="col-md-6">
+            <label for="">Enter Phone Image</label>
+            <input type="file" name="phone_image" accept="image/*"  class="form-control" id="" >
+            <img src="" width="100px" alt="">
+        </div>
+
+        <div class="col-md-6">
+            <label for="">Enter Phone Number</label>
+            <input type="text" name="phone_number" value="<%-info[0].phone_number%>" class="form-control" id="" >
+            
+        </div>
+        <div class="col-md-6">
+            <label for="">Enter Location Image</label>
+            <input type="file" name="location_image" accept="image/*"  class="form-control" id="" >
+        </div>
+        <div class="col-md-6">
+            <label for="">Enter Hospital Address</label>
+            <textarea name="hospital_address" class="form-control"  id="" ><%-info[0].hospital_address%></textarea>
+        </div>
+        <div class="col-md-6">
+            <label for="">Enter Email Image</label>
+            <input type="file" name="email_image" accept="image/*"  class="form-control" id="" >
+        </div>
+        <div class="col-md-6">
+            <label for="">Enter Email</label>
+            <input type="text" name="email" value="<%-info[0].email%>" class="form-control" id="" >
+        </div>
+
+   
+
+        <div class="col-md-12 text-center inline-block">
+            <button class="btn btn-lg btn-primary inline-block mt-5">Save</button>
+        </div>
+      
+    </div>
+</form>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover table-dark">
+                <thead style="white-space: nowrap;">
+                    
+                  <tr>
+                    <th scope="col">#</th>
+                    
+                    <th scope="col ">Enter Phone Image</th>
+                    <th scope="col ">Enter Phone Number</th>
+                    <th scope="col ">Enter Location Image</th>
+                    <th scope="col ">Enter Hospital Address</th>
+                    <th scope="col ">Enter Email</th>
+                    <th scope="col ">Enter Email Image</th>
+                  </tr>
+                </thead>
+                <tbody>
+                
+                    <tr>
+
+                        <% info.map((row,i)=>{ %>
+                            <td></td>
+                            <td class="text-white"><%-row.phone_number%></td>
+                            <td>
+                                <img src="/assest/img/photos/<%-row.phone_image%>" width="200px" alt="">
+                            </td>
+                            <td class="text-white"><%-row.hospital_address%></td>
+                            <td>
+                                <img src="/assest/img/photos/<%-row.location_image%>" width="200px" alt="">
+                            </td>
+                            <td class="text-white"><%-row.email%></td>
+                            
+                            <td>
+                                <img src="/assest/img/photos/<%-row.email_image%>" width="200px" alt="">
+                            </td>
+                           
+                        <% }) %>
+                        
+                    </tr>
+                    
+                    </tbody>
+                
+               
+              </table>
+        </div>
+    </div>
+</div>
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<%-include("Footer.ejs")%>
+
+<!-- CREATE TABLE slider_images (
+    slider_images_id INT AUTO_INCREMENT PRIMARY KEY,
+    image_name VARCHAR(255),
+    image_upload TEXT
+); -->
+
+
+<!-- CREATE TABLE navbar_info (
+    navbar_info_id INT AUTO_INCREMENT PRIMARY KEY,
+    phone_image TEXT,
+    phone_number VARCHAR(13),
+    location_image TEXT,
+    hospital_address TEXT,
+    email_image TEXT,
+    email VARCHAR(100)
+); -->

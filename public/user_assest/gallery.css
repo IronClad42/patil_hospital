@@ -1,0 +1,31 @@
+.gallary-img {
+    /* background-image: url('https://www.productiveedge.com/hubfs/system-integration.jpg') !important; */
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 500px !important;
+    width: 100% !important;
+    background-color: aquamarine;
+    padding-top: 300px;
+    padding-bottom: 300px;
+}
+
+.gallary-img h1 {
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.our-gallary h1 {
+    color: red;
+}
+
+.our-gallary img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+.our-gallary img {
+    height: 300px;
+    width: 400px;
+}

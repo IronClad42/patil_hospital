@@ -1,0 +1,83 @@
+<%-include("index.ejs")%>
+
+
+<div class="container   mt-5 pt-5 pb-5 mb-5 text-justify " style="background-color: rgb(223, 149, 226);">
+    <form action="/admin/serve_deatils" method="post" enctype="multipart/form-data">
+        <div class="row">
+
+            <h1 class="text-center text-white">Services Card Deatils</h1>
+
+            <div class="col-md-12 ">
+                <label for="">Services Image</label>
+                <input type="file" name="card_images_services" value=""   class="form-control" id="">
+            </div>
+
+            <div class="col-md-12 ">
+                <label for="">Services Title</label>
+                <input type="text" name="card_title_services" value="" accept="image/*"  class="form-control" id="">
+                <img src="/" width="100px" alt="">
+            </div>
+
+            <div class="col-md-12 ">
+                <label for="">Services Deatils</label>
+                <textarea type="text" name="card_details_services" class="form-control"></textarea>
+            </div>
+
+            <div class="col-md-12 text-center inline-block">
+                <button class="btn btn-lg btn-primary inline-block mt-5">Save</button>
+            </div>
+        
+        </div>
+    </form>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Table wrapper for responsiveness -->
+            <div class="table-responsive">
+                <table class="table table-hover table-dark text-nowrap">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Sr.No</th>
+                            <th scope="col">Services Image</th>
+                            <th scope="col">Services Title</th>
+                            <th scope="col">Services Deatils</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      
+                        <% info.map((row,i)=>{ %>
+                        
+                        
+                            <tr>
+                                <td>
+                                    <a href="/admin/serve_deatils_edit/<%-row.services_card_id%>">
+                                        <button><i class="fas fa-edit"></i></button>
+                                    </a>
+                                    <a href="/admin/services_card_delete/<%-row.services_card_id%>">
+                                        <button><i class="fa-solid fa-trash"></i></button>
+                                    </a>
+                                  
+                                </td>
+                                <td><%-i+1%></td>
+                                <td>
+                                    <img src="/assest/img/photos/<%-row.card_images_services%>" width="300px" alt="">
+                                </td>
+                                <td><%-row.card_title_services%></td>
+                                <td><%-row.card_details_services%></td>
+                            </tr>
+                            
+                            
+                        <% }) %>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%-include("Footer.ejs")%>

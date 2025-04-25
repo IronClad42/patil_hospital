@@ -1,0 +1,31 @@
+.contact-img{
+    /* background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQshR_irJfbwLec6t49qCZD0WYVMn5B7_Bsxw&s') !important; */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 500px !important;
+        width: 100% !important;
+        background-color: aquamarine;
+        padding: 20vh;
+            /* display: block; */
+            /* margin: 20px auto; */
+            /* border-radius: 10px; */
+            /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+        
+    }
+    .contact-img h1{
+        color: white;
+        font-size: 50px;
+        font-weight: bold;
+      }
+.our-address h1{
+    color: red;
+}
+.our-address p i{
+    color: #1B94FF;
+}
+.our-address img{
+    height: 300px;
+}
+
+

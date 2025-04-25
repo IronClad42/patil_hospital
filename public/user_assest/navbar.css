@@ -1,0 +1,87 @@
+
+
+
+
+.news {
+    background-color: #26b4ec !important;
+  }
+.snav {
+    background-color: #1B94FF !important;
+  }
+  .navbar-brand img{
+    height: 70px;
+    width: 80px;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-link {
+      color: white !important;
+      font-weight: bold !important;
+      font-size: 20px !important;
+
+  }
+  
+  .nav-link:hover{
+      color: gold;
+      font-weight: bold;
+  }
+  
+  
+  .enquire-btn {
+      padding: 10px 50px 10px 50px !important;
+      background-color: gold !important;
+      color: black;
+      margin-left: 30vh !important;
+      border: 1px solid #fff !important;
+
+  }
+  
+  .enquire-btn:hover {
+      background-color: goldenrod ; 
+      color: #fff;
+  }
+  .eq-btn {
+    padding-left: 100px;
+  }
+  
+
+  .nav-menu
+  {
+    margin-left: 500px !important;
+
+  }
+
+  .f-nav{
+    background-color: #1B94FF  !important;
+    padding: 10px;
+    color: white;
+    }
+    .f-nav i{
+      color: red;
+    }
+
+
+    @media (max-width:768px) {
+      .enquire-btn {
+        padding: 10px 50px 10px 50px !important;
+        background-color: gold !important;
+        color: black;
+        margin: 0px !important;
+        border: 1px solid #fff !important;
+  
+    }
+
+    .nav-menu
+    {
+      margin-left: 0px !important;
+  
+    }
+    
+    .eq-btn {
+      padding-left: 0px !important;
+    }
+    
+ 
+    }

@@ -1,0 +1,50 @@
+<%- include("index.ejs") %>
+
+<div class="container mt-5 pt-5 pb-5 mb-5 text-justify" style="background-color: rgb(223, 149, 226);">
+    <form action="/admin/home_page_blog" method="post" enctype="multipart/form-data">
+        <div class="row">
+            <h1 class="text-center" style="color: rgb(3, 31, 27);">Blog</h1>
+
+            <!-- Video Upload Input -->
+            <div class="col-md-12">
+                <label for="video">Blog Video</label>
+                <input type="text" name="video" class="form-control" id="video" accept="video/*" required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="col-md-12 text-center mt-4">
+                <button class="btn btn-lg btn-primary">Save</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- Table to Display Uploaded Videos -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Blog Video</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% info.forEach((row, i) => { %>
+                    <tr>
+                        <td><%= i + 1 %></td>
+                        <td>
+                            <iframe src="https://www.youtube.com/embed/<%= row.video %>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+                
+                
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include("Footer.ejs") %>

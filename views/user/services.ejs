@@ -1,0 +1,109 @@
+
+<%-include("navbar.ejs")%>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/services.css">
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+    AOS.init({
+        duration:1000,
+    });
+</script>
+    <section >
+        <div id="navbar"></div>
+    </section>
+
+    <section>
+        <div class="container-fluid mb-md-5 mt-0">
+          <div class="row">
+            <div class="col-12 p-0" data-aos="zoom-in">
+              <div class="service-img d-flex justify-content-center align-items-center card-img-top" style="background-image: url('/assest/img/photos/<%-services_background_images[0].services_image%>'); background-size: cover; background-position: center; height: 600px !important; width: 100% !important; background-color: aquamarine; padding: auto;">
+                <h1 class="text-white"><%-services_background_images[0].serveces_image_name%></h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <section>
+        <div class="container ">
+            <div class="row our-services px-md-5 mx-md-5 pb-5">
+             
+                <% services_card.map((row,i)=>{ %>
+                
+                    <div class="col-md-4  mt-4" data-aos="zoom-in">
+                        <div class="card shadow border-0 rounded-3 ">
+                            <img src="/assest/img/photos/<%-row.card_images_services%>" class="card-img-top p-2 border-1"
+                                alt="...">
+                            <div class="card-body ">
+                                <h5 class="card-title text-center"><%-row.card_title_services%></h5>
+                                <p class="card-text"><%-row.card_details_services%></p>
+                                    
+                            </div>
+                            <button type="button" class="btn btn-primary mx-5 mb-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                       Book Appointment
+                                    </button>
+                        </div>
+                    </div>
+                
+                <% }) %>
+
+             
+            
+                
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <!-- Button trigger modal -->
+        <!-- <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Launch static backdrop modal
+        </button> -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true" >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Book Appointment</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="">
+                            <h5 class="text-center">Appointment For</h5>
+                            <select class="form-select" id="doctorSelect">
+                                <option selected disabled>Choose a doctor...</option>
+                                <option value="dr-smith">Dr. John Smith - Cardiologist</option>
+                                <option value="dr-jones">Dr. Sarah Jones - Pediatrician</option>
+                                <option value="dr-wilson">Dr. Mark Wilson - Orthopedic</option>
+                                <option value="dr-davis">Dr. Emily Davis - Dermatologist</option>
+                            </select>
+                            <input type="datetime-local" class="form-control my-2" placeholder="Choose Appointment Date">
+                            <h5 class="text-center py-1">Patient information</h5>
+                            <input type="text" class="form-control my-2" placeholder="Patient FullName">
+                            <input type="number" class="form-control my-2" placeholder="Patient Mobile number">
+                            <input type="number" class="form-control my-2" placeholder="Patient Age">
+                            <input type="text" class="form-control my-2" placeholder="Patient Address">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary ">Submit Appointment</button>
+                        </form>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section data-aos="zoom-in">
+        <div id="footer"></div>
+    </section>
+
+   
+    
+    
+<%-include("footer.ejs")%>

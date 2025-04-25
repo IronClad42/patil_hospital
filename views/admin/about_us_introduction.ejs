@@ -1,0 +1,210 @@
+<%-include("index.ejs")%>
+
+<div class="container   mt-5 pt-5 pb-5 mb-5 text-justify " style="background-color: rgb(223, 149, 226);">
+    <form action="/admin/about_us_introduction" method="post" enctype="multipart/form-data">
+        <div class="row">
+
+            <h1 class="text-center text-white">About Page Background Edit</h1>
+
+
+
+            <div class="col-md-6 ">
+                <label for="">Big Title </label>
+                <input type="text" name="about_big_title_name" value=""    class="form-control" id="">
+            </div>
+
+            <div class="col-md-6 ">
+                <label for=""> About Us Deatils </label>
+                <textarea type="text" name="about_background_image_name" class="form-control" id="" ></textarea>
+            </div>
+
+            <div class="col-md-6">
+                <label for="">About Images</label>
+                <input type="file" name="about_image" value="" accept="image/*"  class="form-control" id="">
+                <img src="/assest/img/photos" width="100px" alt="">
+            </div>
+
+            <div class="col-md-6 ">
+                <label for="">About Us Card Title</label>
+                <input type="text" name="about_us_card_title" value="" accept="image/*"  class="form-control" id="">
+            </div>
+
+            <div class="col-md-6 ">
+                <label for="">About Us card Details Details</label>
+                <input type="text" name="about_us_card_details" value="" accept="image/*"  class="form-control" id="">
+            </div>
+
+            <div class="col-md-6 ">
+                <label for="">About Name</label>
+                <textarea type="text" name="about_details" class="form-control" id=""></textarea>
+            </div>
+
+
+            <div class="col-md-12">
+                <label for="">About serive</label>
+                <textarea type="text" name="about_service" class="form-control" id=""></textarea>
+            </div>
+
+            <div class="col-md-12 text-center inline-block">
+                <button class="btn btn-lg btn-primary inline-block mt-5">Save</button>
+            </div>
+        
+        </div>
+    </form>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="">
+                <table class="table table-hover table-dark display nowrap table-responsive" id="myTable" >
+                    <thead class="text-nowrap">
+                        <tr class="">
+                            <th scope="col">#</th>
+                            <th scope="col">Sr.No</th>
+                            <th scope="col">Big Title</th>
+                            <th scope="col">About Us Details</th>
+                            <th scope="col">About Images</th>
+                            <th scope="col">About Us Card Title</th>
+                            <th scope="col">About Us Card Details</th>
+                            <th scope="col">About Name</th>
+                            <th scope="col">About Service</th>
+                        </tr>
+                    </thead>
+
+                    <% info.map((row,i)=>{ %>
+
+                        <tr>
+                            <td class="text-nowrap">
+                                <a href="/admin/about__intro_info_edit/<%-row.about_page_id%>">
+                                    <button>  <i class="fas fa-edit"></i>
+                                       </button>
+                                </a>
+                                <a href="/admin/about__intro_info_delete/<%-row.about_page_id%>">
+                                    <button><i class="fa-solid fa-trash-can"></i></button>
+                                </a>
+                            </td>
+                            <td><%=i+1 %></td>
+                            <td><%-row.about_big_title_name%></td>
+                            <td class="text-justify"> 
+
+
+                                <% if(row.about_background_image_name && typeof row.about_background_image_name == 'string') { %>
+                                    
+                                    <%-row.about_background_image_name.substring(0, 20)%>.....
+
+                                    <% } %>
+                                    <br>
+                                <a href="#" data-toggle="modal" data-target="#modal<%-row.about_page_id%>" class="text-nowrap">Read More</a>
+                            </td>
+                            
+                            
+                            <td>
+                                <img src="/assest/img/photos/<%-row.about_image%>" width="100px" alt="">
+                                
+                            </td>
+                            <td><%-row.about_us_card_title%></td>
+                            <td class="text-xl-left"><%-row.about_us_card_details.substring(0, 100)%>....
+                                <a href="#" data-toggle="modal" data-target="#about_us_card_details-<%-row.about_page_id%>" class="text-nowrap">Read More</a>
+                                
+                                
+
+                            </td>
+                            <td><%-row.about_details%></td>
+                            <td><%-row.about_service.substring(0, 70)%>....
+                                <button class="read-more-btn">Read More</button>
+                            </td>
+                            
+
+                        </tr>
+                        <% }) %>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<style>
+    .text-container {
+        position: relative;
+        max-width: 250px; /* Adjust as needed */
+        overflow: hidden;
+    }
+
+    .read-more-btn {
+        background: none;
+        border: none;
+        color: #1e90ff;
+        cursor: pointer;
+        padding: 0;
+        font-size: 14px;
+    }
+
+    .read-more-btn:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<!-- Button trigger modal -->
+
+  <!-- Modal -->
+  <% info.map((row) => { %>
+    <div class="modal fade" id="modal<%-row.about_page_id%>" tabindex="-1" aria-labelledby="modalLabel-<%-row.about_page_id%>" aria-hidden="true" style="box-sizing: border-box;">
+        <div class="modal-dialog">
+            <div class="modal-content p-5">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modalLabel-<%-row.about_page_id%>">Title:-<%-row.about_big_title_name%></h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-justify">
+                    <% if (!row.about_background_image_name == 0 ) { %>
+                        <p class="text-justify"><h2>Description</h2><%-row.about_background_image_name%></p>
+                        <% } else { %>
+                            <p class="text-justify"><h2>Empty Data</h2></p>
+                    <% } %>
+                    
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+
+
+  <% info.map((row) => { %>
+    <div class="modal fade" id="about_us_card_details-<%-row.about_page_id%>" tabindex="-1" aria-labelledby="modalLabel-<%-row.about_page_id%>" aria-hidden="true" style="box-sizing: border-box;">
+        <div class="modal-dialog">
+            <div class="modal-content p-5">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modalLabel-<%-row.about_page_id%>">Title:-<%-row.about_big_title_name%></h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-justify">
+                    <% if (row.about_us_card_details) { %>
+                        <p class="text-justify"><h2>Description</h2><%-row.about_us_card_details%></p>
+                        <% } else { %>
+                            <p class="text-justify"><h2>Empty Data</h2></p>
+                    <% } %>
+                    
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+            
+
+<%-include("Footer.ejs")%>
+

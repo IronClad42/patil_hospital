@@ -1,0 +1,102 @@
+
+
+        <!-- Bootstrap CDN  -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+        <!-- Font Awesome -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+        <!-- CSS -->
+        <link rel="stylesheet" href="/user_assest/Footer.css">
+        
+
+    
+    
+   
+    <section class="footer-bg mt-5 pt-5">
+        <div class="container px-md-4 py-5 ">
+            <div class="row">
+                <div class="col-md-3 footer-col1 ps-0">
+                    <h1 class="">Patil Hospital</h1>
+                    <p class="pe-md-4 py-md-5">
+                        Providing compassionate and specialized pediatric & maternity care with advanced medical
+                        expertise.
+                    </p>
+                    <ul class="d-flex justify-content-start footer-icon p-0  ">
+                        <a href="<%-navbar[0].facebook_icon_url%>">
+                            <li><i class="fa-brands fa-facebook"></i></li>
+                        </a>
+                        <a href="<%-navbar[0].instagram_icon_url%>">
+                            <li><i class="fa-brands fa-instagram"></i></li>
+                        </a>
+                        <a href="<%-navbar[0].twitter_icon_url%>">
+                            <li><i class="fa-brands fa-twitter"></i></li>
+                        </a>
+                        <a href="<%-navbar[0].youtube_icon_url%>">
+                            <li><i class="fa-brands fa-linkedin"></i></li>
+                        </a>
+                    </ul>
+                </div>
+                <div class="col-md-3 footer-col2 ps-0 text-xl-left">
+                    <h3 class="pb-md-5">Quick Link Show</h3>
+                    <ul class="navbar-nav mx-md-auto mb-0 pb-0">
+                        <li class="nav-item">
+                            <h5 class="text-white" ><a class="nav-link" href="/">Home</a></h5>
+                        </li>
+                        <li class="nav-item">
+                            <h5 class="text-white" ><a class="nav-link" href="/user/about_page">About</a></h5>
+                        </li>
+                        <li class="nav-item">
+                            <h5 class="text-white" ><a class="nav-link" href="/services">Services</a></h5>
+                        </li>
+                        <li class="nav-item">
+                            <h5 class="text-white" ><a class="nav-link" href="/gallary">Gallery</a></h5>
+                        </li>
+                        <li class="nav-item">
+                            <h5 class="text-white" ><a class="nav-link" href="/contact">Contact</a></h5>
+                        </li>
+                       
+                    </ul>
+                </div>
+                <div class="col-md-3 footer-col2 ps-0 ">
+                    <h3 class="pb-md-5">Opening Hours</h3>
+                    <p >Mon  :10:00 AM-9:00 PM</p>
+                    <p >Tue  :10:00 AM-9:00 PM</p>
+                    <p >Wed  :10:00 AM-9:00 PM</p>
+                    <p >Thu  :10:00 AM-9:00 PM</p>
+                    <p >Fri  :10:00 AM-9:00 PM</p>
+                    <p >Sat  :10:00 AM-9:00 PM</p>
+                </div>
+               
+                <div class="col-md-3 footer-col4 ps-md-5 f-icon ps-0 p-0">
+                    <h3 class="pb-md-5">Address</h3>
+                   
+                    <span class="pt-5 "><i class="fa-solid fa-phone"></i><span
+                            class="span1 ms-2">+078347598</span></span>
+                    <hr>
+                    <span><i class="fa-solid fa-envelope"></i><span
+                            class="span1 ms-1">gitehospital@gmail.com</span></span>
+                    <hr>
+                    <span><i class="fa-solid fa-location-dot"></i></i><span class="span1 ms-2">Balika Ashram Road,
+                            Ahilyanagar, 414001</span></span>
+                    <hr>
+                    <img src="https://patilhospital.com/wp-content/uploads/2019/08/patil-hospital.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        $(document).ready(function() {
+            $('#myTable').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'print', 'excelHtml5', 'pdfHtml5'
+                ]
+            });
+        });
+    </script>
+    
+</body>
+</html>

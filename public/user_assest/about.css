@@ -1,0 +1,52 @@
+.about-img {
+    padding: 30vh !important;
+    background-size: 100% 70vh; 
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 300px;
+    width: 100%;
+    background-color: aquamarine;
+}
+
+
+
+    
+    .about-us img{
+        height: 100%;
+        width: 100%;
+    }
+    .about-us h1{
+        color: red;
+    }
+    
+    .about-us p{
+        color: gray;
+        font-size: normal;
+        text-align: justify;
+    }
+    
+    .home-services .card:hover{
+        transform: scale(1.05);
+        transition: transform 0.3s ease-in-out;
+     
+    }
+    
+    .home-services h3{
+      color: red;
+    }
+    
+    
+    .home-services .card:hover{
+        background-color: #1B94FF;
+        color: white !important;
+        border-radius: 10px;
+    }
+    
+    .our-policy h1{
+        color: red;
+    }
+    .our-policy p{
+        color: gray;
+        font-size: normal;
+        text-align: justify;
+    }

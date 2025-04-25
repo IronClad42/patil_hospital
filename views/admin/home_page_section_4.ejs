@@ -1,0 +1,102 @@
+<%-include("index.ejs")%>
+
+
+<div class="container   mt-5 pt-5 pb-5 mb-5 text-justify " style="background-color: rgb(223, 149, 226);">
+    <form action="/admin/home_page_section_4" method="post" enctype="multipart/form-data">
+        <div class="row">
+            
+            
+                
+            
+
+
+            <div class="col-md-12 ">
+                <label for="">Big Heading</label>
+                <textarea name="big_heading" class="form-control" id="" ><%-info[0].big_heading%></textarea>
+            </div>
+
+            <div class="col-md-12 ">
+                <label for="">Title</label>
+                <textarea name="title" class="form-control" id=""><%-info[0].title%></textarea>
+                
+            </div>
+
+            <div class="col-md-12 ">
+                <label for="">Sub Title</label>
+                <textarea name="subtitle" class="form-control" id=""><%-info[0].subtitle%></textarea>
+                
+            </div>
+
+          
+
+
+            <div class="col-md-12 ">
+                <label for="">Upload Image </label>
+                <input type="file" name="image" accept="image/*" class="form-control" id="">
+            </div>
+
+           
+
+            <div class="col-md-12 text-center inline-block">
+                <button class="btn btn-lg btn-primary inline-block mt-5">Save</button>
+            </div>
+        
+        </div>
+    </form>
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover table-dark">
+                <thead style="white-space: nowrap;">
+                    
+                  <tr>
+                    <th scope="col">#</th>
+                    
+                    <th scope="col ">Big Heading</th>
+                    <th scope="col ">Title</th>
+                    <th scope="col ">Sub Title</th>
+                    <th scope="col ">Upload Image</th>
+                  </tr>
+                </thead>
+                <tbody>
+                
+                    <tr>
+
+                        <% info.map((row,i)=>{ %>
+                            <td></td>
+                            <td class="text-white"><%-row.big_heading%></td>
+                            <td class="text-white"><%-row.title%></td>
+                            <td class="text-white"><%-row.subtitle%></td>
+                            
+                            <td>
+                                <img src="/assest/img/photos/<%-row.image%>" width="200px" alt="">
+                            </td>
+                           
+                        <% }) %>
+                        
+                    </tr>
+                    
+                    </tbody>
+                
+               
+              </table>
+        </div>
+    </div>
+</div>
+
+
+<%-include("Footer.ejs")%>
+
+
+
+<!-- CREATE TABLE home_page_section_4 (
+    home_page_section_4_id INT AUTO_INCREMENT PRIMARY KEY,
+    big_heading VARCHAR(255),
+    title VARCHAR(255),
+    subtitle VARCHAR(255),
+    image TEXT
+); -->
